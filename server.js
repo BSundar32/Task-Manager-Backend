@@ -16,10 +16,16 @@ connectDB();
 verifyEmailConnection();
 
 // Middleware
-app.use(cors({
-  origin: process.env.CLIENT_URL || 'https://task-manager-backend-404g.onrender.com/',
-  credentials: true,
-}));
+app.use(cors());
+// app.use(cors({
+//   origin: [
+//     'https://guvitaskmanager.netlify.app',
+//     'http://localhost:3000',
+//     'http://localhost:5173',
+//     ...(process.env.CLIENT_URL ? [process.env.CLIENT_URL] : []),
+//   ],
+//   credentials: true,
+// }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
